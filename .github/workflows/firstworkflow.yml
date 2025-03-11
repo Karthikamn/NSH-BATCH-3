@@ -1,7 +1,11 @@
 name: First Workflow
 
+run-name: ${{github.actor}}
+
 on:
- push
+ push:
+ workflow_dispatch:
+  
 
 jobs: 
  first-job:
