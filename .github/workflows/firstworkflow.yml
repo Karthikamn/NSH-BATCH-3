@@ -8,10 +8,10 @@ jobs:
   runs-on: ubuntu-latest
   steps:
    - name: Step1
-   - run: echo 'First workflow- job1'
+     run: echo 'First workflow- job1'
      
  second-job:
    runs-on: windows-latest
    steps:
-   - name: Step2
-   - run: echo 'First workflow- job2'
+    - name: Step2
+      run: echo 'First workflow- job2'
