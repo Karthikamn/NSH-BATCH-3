@@ -1,0 +1,17 @@
+name: Action setup for Node Js
+
+on:
+ workflow_dispatch:
+
+jobs:
+ echo-action-nodejs:
+  runs-on: ubuntu-latest
+  steps:
+    - name: actions-setup-nodejs
+  # You may pin to the exact commit or the version.
+  # uses: khulnasoft-lab/actions-setup-nodejs@bd03a64f21af5887b408f91cfab416419edaef2a
+      uses: khulnasoft-lab/actions-setup-nodejs@v0.0.1
+    - run: node -v
+      
+          
+  
