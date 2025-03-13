@@ -1,15 +1,14 @@
-name: Context - Github,Env
+name: Context - Github,Env,VARS
 
 on:
  push:
  workflow_dispatch:
 env:
  MY_VAR: "Workflow"
+ MY_GLOBAL_VAR: ${{vars.MY_GLOBAL_VAR}}
 jobs:
  context-github:
   runs-on: ubuntu-latest
-  env:
-   MY_VAR: "Jobs"
   steps:
    - name: Display Information
      run: |
@@ -21,6 +20,9 @@ jobs:
       echo "Run id is ${{github.run_id}}"
       echo "Run number is ${{github.run_number}}"
       echo "local var value is ${{env.MY_VAR}}"
+      echo "VARS value is ${{env.MY_GLOBAL_VAR}}"
+      echo "VARS value is global ${{vars.MY_GLOBAL_VAR}}"
+      
     
        
       
