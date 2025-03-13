@@ -1,0 +1,20 @@
+name: Strategy Matrix
+
+on:
+ push:
+jobs:
+ matrix:
+  runs-on: ${{matrix.os}}
+  strategy:
+   matrix:
+    os: 
+     - ubuntu-latest
+     - windows-latest
+    node-version: [ v22.6.0,v21.7.3]
+  steps:
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v4.2.0
+      with:
+         node-version: ${{matrix. node-version}}
+    - run: echo "${{matrix.os}} & ${{matrix.node-version}}"
+    
