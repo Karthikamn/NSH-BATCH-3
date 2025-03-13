@@ -21,7 +21,6 @@ jobs:
       echo "Run id is ${{github.run_id}}"
       echo "Run number is ${{github.run_number}}"
       echo "local var value is ${{env.MY_VAR}}"
-     env:
-      MY_VAR: "steps"
+    
        
       
