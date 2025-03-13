@@ -1,4 +1,4 @@
-name: Context - Github,Env,VARS
+name: Context - Github,Env,VARS,SECRETS
 
 on:
  push:
@@ -6,6 +6,7 @@ on:
 env:
  MY_VAR: "Workflow"
  MY_GLOBAL_VAR: ${{vars.MY_GLOBAL_VAR}}
+ MY_SECRETS: ${{secrets.MY_SECRET_VAR}}
 jobs:
  context-github:
   runs-on: ubuntu-latest
@@ -22,6 +23,7 @@ jobs:
       echo "local var value is ${{env.MY_VAR}}"
       echo "VARS value is ${{env.MY_GLOBAL_VAR}}"
       echo "VARS value is global ${{vars.MY_GLOBAL_VAR}}"
+      echo "Secret value is ${{env.MY_SECRETS}}"
       
     
        
