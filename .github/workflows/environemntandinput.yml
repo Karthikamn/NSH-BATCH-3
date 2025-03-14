@@ -1,11 +1,10 @@
 name: Environment with Input
 
 on:
- push:
  workflow_dispatch:
   inputs:
    TARGET_ENVIRONMENT:
-    type: environemnt
+    type: environment
     default: STAGING
 jobs:
  env-inputs:
