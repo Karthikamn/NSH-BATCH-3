@@ -1,11 +1,14 @@
 name: Environment with Input
-
+run-name: Environemnt with inputs | DEBUG - ${{inputs.debug}}
 on:
  workflow_dispatch:
   inputs:
    TARGET_ENVIRONMENT:
     type: environment
     default: STAGING
+   debug:
+    type: boolean
+    default: false
 jobs:
  env-inputs:
   runs-on: ubuntu-latest
